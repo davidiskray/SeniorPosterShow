@@ -1,0 +1,74 @@
+@import "partials/reset";
+@import "partials/klas-framework";
+
+
+/* -------------------------------------------------
+** TEMPLATE
+** ---------------------------------------------- */
+* { @include box-sizing('border-box'); }
+
+/* iOS fixes */
+html { -webkit-text-size-adjust: none; }
+input[type=submit] { -webkit-appearance: none; -moz-appearance: none; }
+
+/* Media Queries for determining javascript events, via http://adactio.com/journal/5429/ */
+body:after { content: 'mobile'; display: none; }
+@media only screen and (min-width: $mq-desktop) {
+	body:after { content: 'desktop'; }
+}
+// EXAMPLE
+// @media screen and (min-width: $mq-desktop) {
+// /* styles here */
+// } // END @media: $mq-desktop
+
+body {
+	color: $body-color;
+	font-size: 100%;
+	font-weight: normal;
+	line-height: 150%;
+	font-family: $body-font;
+}
+a {
+	color: $link-color;
+	&:hover{
+		color: $link-hover;
+	}
+}
+h1 {
+	font-size: 2.25em;  /* 16x2.25=36 */
+	line-height: 1.33333333333333em; /* 48px */
+	color: $heading-color;
+}
+h2 {
+	font-size: 1.5em;   /* 16x1.5=24 */
+	color: $heading-color; /* 24px */
+}
+h3 {
+	font-size: 1.125em; /* 16x1.125=18 */
+	line-height: 1.33333333333333em; /* 24px */
+	color: $heading-color;
+}
+h4 {
+	font-size: 0.875em; /* 16x0.875=14 */
+	line-height: 1.71428571428571em; /* 24px */
+	color: $heading-color;
+}
+p {
+	font-size: 1em;		/* 16x1=16 */
+	padding-bottom: 1em;
+}
+ol {
+	list-style: decimal;
+	margin: 0 0 1em 2em;
+	li { margin: .5em 0; }
+	ol { list-style: lower-alpha; }
+}
+ul {
+	list-style: disc;
+	margin: 0 0 0 1.1em;
+	padding-bottom: 1em;
+	nav & { // remove styling for nav ul's
+		@include ul-reset;
+		a { text-decoration: none; }
+	}
+}
