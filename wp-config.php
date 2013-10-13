@@ -14,78 +14,18 @@
  * @package WordPress
  */
 
-// One wp-config.php file for multiple environments setup from http://www.messaliberty.com/2010/01/how-to-create-a-single-wp-config-file-for-local-and-remote-wordpress-development/
-if (
-		preg_match('/^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-2]))/', $_SERVER['REMOTE_ADDR']) || // Request IP is in a private block
-		preg_match('/^([a-z-_0-9]+\.)*[a-z-_0-9]+\.dev(?!\.)/', $_SERVER['SERVER_NAME']) // Request Domain follows the pattern [xxx.]xxx.dev
-	) {
-	define('WP_ENV', 'local');
-} elseif (preg_match('/staging_tld/', $_SERVER['HTTP_HOST'])) { // staging_server_domain
-	define('WP_ENV', 'staging');
-} else {
-	define('WP_ENV', 'production');
-}
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'seniorshow');
 
-if ( WP_ENV == 'local' ) {
-	// ** MySQL settings - You can get this info from your web host ** //
-	/** The name of the database for WordPress */
-	define('DB_NAME', 'replace_with_local_db'); // local_db_name
+/** MySQL database username */
+define('DB_USER', 'root');
 
-	/** MySQL database username */
-	define('DB_USER', 'root'); // local_db_user
+/** MySQL database password */
+define('DB_PASSWORD', 'root');
 
-	/** MySQL database password */
-	define('DB_PASSWORD', 'root'); // local_db_password
-
-	/** MySQL hostname */
-	define('DB_HOST', 'localhost'); // local_db_host
-
-	define('WP_SITEURL', ".dev"); // local_site_url
-
-	define('WP_HOME', ".dev"); // local_home_url
-
-} elseif ( WP_ENV == 'staging') {
-	// ** MySQL settings - You can get this info from your web host ** //
-	/** The name of the database for WordPress */
-	define('DB_NAME', 'staging'); // staging_db_name
-
-	/** MySQL database username */
-	define('DB_USER', ''); // staging_db_user
-
-	/** MySQL database password */
-	define('DB_PASSWORD', ''); // staging_db_password
-
-	/** MySQL hostname */
-	define('DB_HOST', ''); // staging_db_host
-
-	define('WP_SITEURL', ".com"); // staging_site_url
-
-	define('WP_HOME', ".com"); // staging_home_url
-
-} else {
-	// ** MySQL settings - You can get this info from your web host ** //
-	/** The name of the database for WordPress */
-	define('DB_NAME', ''); // production_db_name
-
-	/** MySQL database username */
-	define('DB_USER', ''); // production_db_user
-
-	/** MySQL database password */
-	define('DB_PASSWORD', ''); // production_db_password
-
-	/** MySQL hostname */
-	define('DB_HOST', ''); // production_db_host
-
-	define('WP_SITEURL', ".com"); // production_site_url
-
-	define('WP_HOME', ".com"); // production_home_url
-
-}
-/** Set klas to the default template for WordPress to use. */
-define('WP_DEFAULT_THEME', 'klas');
-
-/** Set reasonable number of post revisions to maintain per post. */
-define( 'WP_POST_REVISIONS', 15 );
+/** MySQL hostname */
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -102,7 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-// Insert_Salts_Below
+define('AUTH_KEY',         'Z(b?NnQ|fdwl*G(qOWSb;91}~aQJ{`X3t!*}F2*1YxKC:FAc#!]ees7e@dH:</r@');
+define('SECURE_AUTH_KEY',  'x:[Y]E+O=pRxJYU+;caHy~~kwNBpN^Du+QnkG+9|o7+D:tHehZ1Vo2/,6eZCxa[G');
+define('LOGGED_IN_KEY',    '}aydG5+jfF89Uhm([,4kFZB:wJ+5:BwzRgsXo7^|nmaL}+t&w& /_:.w+a-0z61&');
+define('NONCE_KEY',        '!19o([@t5Ae&d$;KL&|Wy+!octpCn<D{ZpS|O7pA|E6>uRX~3j^507=Bjy&ZK+pA');
+define('AUTH_SALT',        'E3rF#QyL>l<IXaj+2!=*#%aNDxYFX4-Sl5%5@IR`h>r>KGUYF+|QM.<l&z1V~R02');
+define('SECURE_AUTH_SALT', 'f2Ii$at/-K?+%G@qyj</52PE1ptY %6?-lF}1]ml}F4>|`$S.7UewwY,anK{vGL%');
+define('LOGGED_IN_SALT',   'G%}}ca(%?bo-fi/1,Kl29o7%6k[Y5(.L.,OaAA #P-]dq)@up:]km`.5H>9vToZT');
+define('NONCE_SALT',       's~vT%f`/|mO-B2!8/+ztb=Z[Ey8,64%6:1T|(}XGsB+d+[XfBdq/u}U?2u^WQ{4k');
 
 /**#@-*/
 
