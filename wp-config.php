@@ -16,22 +16,25 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'seniorshow');
+define('DB_NAME', 'wp_postershow2013');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'postershowadmin');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'ASUvcd2013!');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '70.32.73.104');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+define('WP_HOME','http://localhost:8888/seniorpostershow');
+define('WP_SITEURL','http://localhost:8888/seniorpostershow');
 
 /**#@+
  * Authentication Unique Keys and Salts.
