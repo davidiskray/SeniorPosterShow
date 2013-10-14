@@ -10,5 +10,17 @@
 
 <?php wp_footer(); ?><!-- required don't remove -->
 
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/masonry.min.js"></script>
+
+<script type="text/javascript">
+	window.onload = function() {
+ 		 var wall = new Masonry( document.getElementById('brick'), {
+ 		 	columnWidth: 236,
+    		gutterWidth: 30,
+    		isFitWidth: true
+ 		 });
+	}; 
+</script>
+
 </body>
 </html>
