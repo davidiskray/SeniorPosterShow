@@ -11,7 +11,9 @@ $(document).ready(function() {
 	
 	if (viewport_size.indexOf("desktop") !== -1) { // aka if viewport_size == 'desktop':
 		// Desktop behavior
+		$(".bg").anystretch("../img/lexi-photo.jpg");
 	} else {
 		// Mobile behavior
 	}
+
 });
