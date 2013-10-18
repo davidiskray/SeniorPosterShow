@@ -13,6 +13,8 @@
 	<?php wp_head(); ?>
 	
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/screen.css" />
+
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="<?php bloginfo( 'template_directory' ); ?>/js/respond.min.js"></script>
@@ -33,7 +35,7 @@
 	<div class="wrapper">
 	
 		<header role="header">
-			<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/img/no-naked-walls.png" alt="no-naked-walls"></a>
+		
 			<nav role="navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false) ); ?>
 			</nav>
