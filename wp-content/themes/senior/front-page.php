@@ -24,7 +24,6 @@
 				Tempe, AZ 85281
 			</p>
 			<p>
-				Doors Open: 5:30pm<br />
 				Silent Auction: 6:00pm<br />
 				Live Auction: 7:30pm
 			</p>
