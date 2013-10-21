@@ -36,6 +36,10 @@ body {
 	width: 90%;
 	margin: 0 auto;
 }
+ .item {
+	width: 205px;
+	height: 400px;
+}
 ////////////////////header///////////////////
 header{
 	z-index: 50;
@@ -46,15 +50,20 @@ header{
 		.logo{
 			position: relative;
 			float: left;
-			width: 20%;
+			width: 240px;
 			height: auto;
 			padding-left: 5%;
 			padding-top: 1em;
 			padding-bottom: .8em;
+			margin-right: 35%;
+			&:hover{
+
+			}
 		}
+
 		img{
 			position: relative;
-			width:210px;
+			width:100%;
 			height: auto;
 		}
 		nav{
@@ -62,11 +71,10 @@ header{
 			list-style: none;
 			position: relative;
 			width: 40%;
+			margin-left: 5%;
 			clear: none;
 			padding-top: 1.35em;
 			padding-bottom: .8em;
-
-			margin-left: 40%;
 				a { 
 					text-decoration: none;
 					cursor: pointer;
@@ -83,51 +91,45 @@ header{
 				li:first-child  {
 				
 				}
+				@media screen and (max-width: 1200px) {
+					padding-top: 0em;
+				}
 		}
 }
 ///////////////////home-page///////////////////////////
 .flexslider{
 	position:absolute;
-	top:0;
-	left:0;
-	z-index:1;
+	top:0 !important;
+	left:0 !important;
+	z-index:-80;
 	width: 100%;
-	height: 100%;
-	z-index: -80;
+	height: 100% !important;
 }
 .flex-viewport{
-	height:100%;
-	width: 100%;
+	height:100% !important;
 }
 ul.slides{
 	width:100%;
-	height:100% ;
-	margin-left: 0;
-	-webkit-transition:0.4s ease-in-out;	
-	-moz-transition: 0.4s ease-in-out;
-	-o-transition: 0.4s ease-in-out;
-	-ms-transition: 0.4s ease-in-out;
-	transition:  0.4s ease-in-out;
-	@media screen and (max-width: 1080px) {
-		width:1800px;
-		height: 500px;
-		margin-left: -800px
-	}
-		img {
+	height:100%;
+		li {
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			display: block;
 			width: 100%;
-			height: 100% ;
+			height: 100%;
 		}
 }
-.home-button{
-	border: 3px #000;
+.button {
+	border: none;
 	font-family: inherit;
-	font-size: inherit;
+	font-weight: normal;
+	font-size: 1em;
 	color: inherit;
 	background: none;
 	cursor: pointer;
 	padding: 25px 80px;
-	display: inline-block;
-	margin: 15px 30px;
+	margin: 0 auto;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 700;
@@ -137,6 +139,42 @@ ul.slides{
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
+.button:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.button {
+	border: 2px solid #222222;
+	color: #222222;
+}
+.button-black:after {
+	width: 100%;
+	height: 0;
+	top: 0;
+	left: 0;
+	background: #222222;
+}
+.button-black:hover,
+.button-black:active {
+	color: #fff;
+}
+.button-black:hover:after,
+.button-black:active:after {
+	height: 100%;
+	background: #222222;
+
+}
+.left{
+	font-size: .8em;
+	position: relative;
+	width: 40%;
+	margin: 1.4em 0 0 5%; 
+}
+///////////////////////////////////////////
 a {
 	color: $link-color;
 	&:hover{
@@ -174,8 +212,8 @@ ol {
 }
 ul {
 	list-style: disc;
-	margin: 0 0 0 1.1em;
-	padding-bottom: 1em;
+	margin: 0 0 0 0em;
+	padding-bottom: 0em;
 	nav & { // remove styling for nav ul's
 		@include ul-reset;
 		a { text-decoration: none; }

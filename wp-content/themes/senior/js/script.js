@@ -8,6 +8,6 @@ $(document).ready(function() {
 		viewport_size = 'desktop'; //for IE
 	}
 	$('.flexslider').flexslider({
-		animation: "fade"
+		//animation: "fade"
 	});
 });
