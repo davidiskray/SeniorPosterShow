@@ -22,11 +22,120 @@ body:after { content: 'mobile'; display: none; }
 // } // END @media: $mq-desktop
 
 body {
+	background: #fefefe;
 	color: $body-color;
 	font-size: 100%;
 	font-weight: normal;
 	line-height: 150%;
 	font-family: $body-font;
+}
+.wrapper{
+	width: 100%;
+}
+.content-wrapper{
+	width: 90%;
+	margin: 0 auto;
+}
+////////////////////header///////////////////
+header{
+	z-index: 50;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	display: inline-block;
+		.logo{
+			position: relative;
+			float: left;
+			width: 20%;
+			height: auto;
+			padding-left: 5%;
+			padding-top: 1em;
+			padding-bottom: .8em;
+		}
+		img{
+			position: relative;
+			width:210px;
+			height: auto;
+		}
+		nav{
+			float: left;
+			list-style: none;
+			position: relative;
+			width: 40%;
+			clear: none;
+			padding-top: 1.35em;
+			padding-bottom: .8em;
+
+			margin-left: 40%;
+				a { 
+					text-decoration: none;
+					cursor: pointer;
+					font-size: 1.1em;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+				li {	
+					margin-right: 10%;
+					text-decoration: none;
+					display: inline-block;
+					}
+				li:first-child  {
+				
+				}
+		}
+}
+///////////////////home-page///////////////////////////
+.flexslider{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:1;
+	width: 100%;
+	height: 100%;
+	z-index: -80;
+}
+.flex-viewport{
+	height:100%;
+	width: 100%;
+}
+ul.slides{
+	width:100%;
+	height:100% ;
+	margin-left: 0;
+	-webkit-transition:0.4s ease-in-out;	
+	-moz-transition: 0.4s ease-in-out;
+	-o-transition: 0.4s ease-in-out;
+	-ms-transition: 0.4s ease-in-out;
+	transition:  0.4s ease-in-out;
+	@media screen and (max-width: 1080px) {
+		width:1800px;
+		height: 500px;
+		margin-left: -800px
+	}
+		img {
+			width: 100%;
+			height: 100% ;
+		}
+}
+.home-button{
+	border: 3px #000;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 a {
 	color: $link-color;

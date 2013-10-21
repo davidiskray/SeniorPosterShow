@@ -2,19 +2,38 @@
 
 		<section>
 
-			<?php if(have_posts()) : while(have_posts()) : the_post(); ?><!-- start loop -->
-				<article>
-					<?php $images = get_field('home-img');
-						if( $images ): ?>
-							<div class="bg">
-								<?php foreach( $images as $image ): ?>
-									<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-								<?php endforeach; ?>
-							</div>
-						<?php endif; ?>
-	
-				</article>	
-			<?php endwhile; endif; ?><!-- end loop -->
+			<?php
+ 
+				/*
+				*  View array data (for debugging)
+				*/
+				 
+				/* var_dump( get_field('home-img') ); */
+				 
+				/*
+				*  Create the Markup for a slider
+				*  This example will create the Markup for Flexslider (http://www.woothemes.com/flexslider/)
+				*/
+				 
+				$images = get_field('home-img');
+				 
+					if( $images ): ?>
+					    <div id="slider" class="flexslider">
+					        <ul class="slides">
+					            <?php foreach( $images as $image ): ?>
+					                <li id="burg">
+					                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+					                </li>
+					            <?php endforeach; ?>
+					        </ul>
+					    </div>
+					<?php endif; 
+
+				 	
+				?>
+
+
+
 			<p>
 				Thursday<br />
 				21 November 2013
@@ -29,10 +48,15 @@
 				Silent Auction: 6:00pm<br />
 				Live Auction: 7:30pm
 			</p>
+			
 
 			
 		</section>
-		
-		<?php get_sidebar(); ?>
-		
-<?php get_footer(); ?>
+<?php
+if ( is_page() ) :
+	get_footer( 'home' );
+else :
+	get_footer();
+endif;
+?>
+				

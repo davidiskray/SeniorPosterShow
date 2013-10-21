@@ -7,13 +7,7 @@ $(document).ready(function() {
 	} else {
 		viewport_size = 'desktop'; //for IE
 	}
-	
-	
-	if (viewport_size.indexOf("desktop") !== -1) { // aka if viewport_size == 'desktop':
-		// Desktop behavior
-		$(".bg").anystretch("./img/lexi-photo.jpg");
-	} else {
-		// Mobile behavior
-	}
-
+	$('.flexslider').flexslider({
+		animation: "fade"
+	});
 });

@@ -12,12 +12,8 @@ Template Name: Posters
 		while($custom_query->have_posts()) : $custom_query->the_post(); ?>
 		<article class="item masonry-brick"><h1><?php the_post_thumbnail(); ?></h1>
 		<?php the_content(); ?>
-		<?php echo $slug; ?>
 		<p><?php echo get_field('title'); ?><?php echo get_field('firm'); ?><?php echo '</br>' ?><?php echo get_field('dimensions'); ?></p>
 		</article>
-
-		
-
 		<?php endwhile; ?>
 		</div>
 		</section>
