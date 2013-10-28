@@ -18,14 +18,16 @@
 				Thursday<br />
 				21 November 2013
 			</p>
+		</div>
+		<div class="middle">
+			<p>
+				Silent Auction: 6:00pm<br />
+				Live Auction: 7:30pm
+			</p>
 			<p>
 				ASU Old Main<br />
 				400 E. Tyler Mall<br />
 				Tempe, AZ 85281
-			</p>
-			<p>
-				Silent Auction: 6:00pm<br />
-				Live Auction: 7:30pm
 			</p>
 		</div>
 		<div class="right">
